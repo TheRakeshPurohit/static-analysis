@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+        with:
+          token: ${{ secrets.GH_STATS_COMMIT_TOKEN }}
+
       - name: Install logcli
         run: |
           rm -rf logcli.zip logcli-linux-amd64
